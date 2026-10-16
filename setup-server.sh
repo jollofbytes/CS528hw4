@@ -1,5 +1,5 @@
 #!/bin/bash
-# Creates the HW4 web server VM. Run from the folder with main.py and startup-server.sh:
+# Creates the HW4 web server VM. Run from the folder with HW4.py and startup-server.sh:
 #   bash setup-server.sh
 # Safe to rerun: steps that already happened just print "already exists".
 
@@ -28,7 +28,7 @@ echo "== Create the VM (starts it + runs the startup script) =="
 gcloud compute instances create hw4-server --zone=$ZONE \
   --machine-type=e2-micro --image-family=debian-12 --image-project=debian-cloud \
   --address=$IP --tags=hw4-server --service-account=$SA --scopes=cloud-platform \
-  --metadata-from-file=startup-script=startup-server.sh,server-code=main.py
+  --metadata-from-file=startup-script=startup-server.sh,server-code=HW4.py
 
 echo ""
 echo "Server IP: $IP"
